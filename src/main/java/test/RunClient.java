@@ -1,15 +1,7 @@
 package test;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.*;
-
-/**
- * Hello world!
- *
- */
 
 public class RunClient {
     public static void main(String[] args) {
@@ -78,17 +70,20 @@ public class RunClient {
                 // long creditCard = Long.parseLong(values[5]);
 
                 if(!fligths.containsKey(flightNumber)) {
-                    System.out.println(name + ": Flight does not exists");
+                    writeInvalidBookingDetail(name, ": Flight does not exists");
+                    // System.out.println(name + ": Flight does not exists");
                 }
                 else {
                     Flight f = fligths.get(flightNumber);
 
                     if(f.availableSeats.get(category) < noOfSeats) {
-                        System.out.println(name + ": Not enough seats for this category");
+                        writeInvalidBookingDetail(name, ": Not enough seats for this category");
+                        // System.out.println(name + ": Not enough seats for this category");
                     }
                     else {
                         if(isCreditCardValid(creditCard) == false) {
-                            System.out.println(name + ": Invalid Card");
+                            writeInvalidBookingDetail(name, ": Invalid Card");
+                            // System.out.println(name + ": Invalid Card");
                         }
                     }
                 }
@@ -127,4 +122,14 @@ public class RunClient {
         }
         return false;
     }
+
+    public static void writeInvalidBookingDetail(String name, String reason) throws IOException {
+        File invalidBookingDetail = new File(name + "_invalid_booking.txt");
+        FileWriter fw = new FileWriter(invalidBookingDetail);
+        PrintWriter pw = new PrintWriter(fw);
+
+        pw.println("Please enter correct booking details for " + name + ": " + reason);
+        pw.close();
+    }
+
 }
