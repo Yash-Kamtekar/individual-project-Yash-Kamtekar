@@ -90,7 +90,8 @@ public class RunClient {
                         }
                         else {
                             f.subSeatCount(category, noOfSeats);
-                            System.out.println(name + ", " + flightNumber + ", " +  category + ", " +  noOfSeats + ", " +  totalPrice);
+                            // System.out.println(name + ", " + flightNumber + ", " +  category + ", " +  noOfSeats + ", " +  totalPrice);
+                            writeValidBookingDetails(name, flightNumber, category, noOfSeats, totalPrice);
                         }
                     }
                 }
@@ -136,6 +137,16 @@ public class RunClient {
         PrintWriter pw = new PrintWriter(fw);
 
         pw.println("Please enter correct booking details for " + name + ": " + reason);
+        pw.close();
+    }
+
+    public static void writeValidBookingDetails(String name, String flightNo, String category, int noOfSeats, double totalPrice) throws IOException {
+        File validBookingDetail = new File(name, "_booking_detail.csv");
+        FileWriter fw = new FileWriter(validBookingDetail);
+        PrintWriter pw = new PrintWriter(fw);
+    
+        pw.println("Booking name, Flight Number, Category, number of seats, price");
+        pw.println(name + ", " + flightNo + ", " + category + ", " + noOfSeats + ", " + totalPrice);
         pw.close();
     }
 }
