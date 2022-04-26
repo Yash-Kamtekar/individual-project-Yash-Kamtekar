@@ -23,8 +23,14 @@ public class Flight {
     // this.categoryValues.put(category)[0] = price;
     // }
 
-    public void updateSeatCount(String category, int numberOfSeats) {
-        this.availableSeats.put(category, this.availableSeats.getOrDefault(category, 0) + numberOfSeats);
+    public void addSeatCount(String category, int noOfSeats) {
+        int oldSeatCount = this.availableSeats.getOrDefault(category, 0);
+        this.availableSeats.put(category, oldSeatCount + noOfSeats);
+    }
+
+    public void subSeatCount(String category, int noOfSeats) {
+        int oldSeatCount = this.availableSeats.get(category);
+        this.availableSeats.put(category, oldSeatCount - noOfSeats);
     }
 
     public int getSeatCount(String category) {

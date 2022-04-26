@@ -12,12 +12,12 @@ public class RunClient {
         fligths.put("CA453", new Flight("Seattle", "San Jose", "Business", 5, 1500));
 
         Flight obj = fligths.get("BY110");
-        obj.updateSeatCount("Business", 5);
+        obj.addSeatCount("Business", 5);
         obj.setPrice("Business", 2000);
         fligths.put("BY110", obj);
 
         obj = fligths.get("CA453");
-        obj.updateSeatCount("Economy", 5);
+        obj.addSeatCount("Economy", 5);
         obj.setPrice("Economy", 300);
         fligths.put("CA453", obj);
 
@@ -81,9 +81,16 @@ public class RunClient {
                         // System.out.println(name + ": Not enough seats for this category");
                     }
                     else {
+                        double priceOfEachSeat = f.costOfSeat.get(category);
+                        double totalPrice = noOfSeats * priceOfEachSeat;
+
                         if(isCreditCardValid(creditCard) == false) {
                             writeInvalidBookingDetail(name, ": Invalid Card");
                             // System.out.println(name + ": Invalid Card");
+                        }
+                        else {
+                            f.subSeatCount(category, noOfSeats);
+                            System.out.println(name + ", " + flightNumber + ", " +  category + ", " +  noOfSeats + ", " +  totalPrice);
                         }
                     }
                 }
@@ -131,5 +138,4 @@ public class RunClient {
         pw.println("Please enter correct booking details for " + name + ": " + reason);
         pw.close();
     }
-
 }
