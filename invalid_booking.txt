@@ -1,2 +1,2 @@
-John: Flight does not exists
-Sierra: Invalid Card
+Please enter correct booking details for John: Flight does not exists
+Please enter correct booking details for Sierra: Invalid Card
