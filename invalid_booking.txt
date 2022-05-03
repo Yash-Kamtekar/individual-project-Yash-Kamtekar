@@ -1,0 +1,2 @@
+John: Flight does not exists
+Sierra: Invalid Card
