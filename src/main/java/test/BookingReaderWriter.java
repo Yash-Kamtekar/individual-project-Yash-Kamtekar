@@ -10,8 +10,7 @@ public class BookingReaderWriter {
 
     public BookingReaderWriter() {
 
-        flightInventoryObj = new FlightInventory();
-        // flightInventoryObj = FlightInventory.getInstance();
+        flightInventoryObj = FlightInventory.getInstance();
         bookings = new BookingValidator();
 
     }
