@@ -2,7 +2,6 @@ test/FlightInventory.class
 test/Visa.class
 test/Amex.class
 test/Card.class
-test/Category.class
 test/MasterCard.class
 test/RunClient.class
 test/Discover.class

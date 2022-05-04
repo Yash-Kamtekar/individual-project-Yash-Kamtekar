@@ -17,8 +17,16 @@ public class AmexTest {
 
     @Test
     public void inValidAmexCard() {
-        Card creditCard = new Card("351109000000000");
+        Card creditCard = new Card("531109000000000");
         Chain chainAmex = new Amex();
+
+        assertFalse(chainAmex.evaluate(creditCard));
+    }
+
+    @Test
+    public void inValidSecondDigit() {
+        Chain chainAmex = new Amex();
+        Card creditCard = new Card("381109008002000");
 
         assertFalse(chainAmex.evaluate(creditCard));
     }
