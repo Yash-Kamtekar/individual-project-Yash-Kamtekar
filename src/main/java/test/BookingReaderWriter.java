@@ -4,8 +4,7 @@ import java.io.*;
 
 public class BookingReaderWriter {
 
-    FlightInventory flightInventoryObj;
-    // Map<String, Flight> flightInventoryObj;
+    IBuilder flightInventoryObj;
     BookingValidator bookings;
 
     public BookingReaderWriter() {

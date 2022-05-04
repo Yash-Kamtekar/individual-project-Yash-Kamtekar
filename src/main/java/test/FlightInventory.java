@@ -3,12 +3,13 @@ package test;
 import java.util.HashMap;
 import java.util.Map;
 
-public class FlightInventory {
+public class FlightInventory implements IBuilder {
 
     Map<String, Flight> flights;
     private static FlightInventory firstIntance = null;
 
-    private FlightInventory() { }
+    private FlightInventory() {
+    }
 
     public static FlightInventory getInstance() {
 
