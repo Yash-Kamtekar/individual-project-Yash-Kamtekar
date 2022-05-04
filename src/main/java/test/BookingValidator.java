@@ -35,7 +35,7 @@ public class BookingValidator {
 
     public void addInValidBookingDetail(String inValidBooking) {
 
-        inValidBookingDetail.add(inValidBooking);
+        inValidBookingDetail.add("Please enter correct booking details for " + inValidBooking);
 
     }
 }
