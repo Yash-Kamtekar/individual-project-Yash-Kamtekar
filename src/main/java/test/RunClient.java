@@ -5,7 +5,6 @@ import java.io.IOException;
 public class RunClient {
 
     public static void main(String[] args) {
-
         BookingReaderWriter bookingReadWriter = new BookingReaderWriter();
 
         try {

@@ -2,8 +2,11 @@ test/FlightInventory.class
 test/Visa.class
 test/Amex.class
 test/Card.class
+test/IBuilder.class
 test/MasterCard.class
 test/RunClient.class
+test/BookingValidator.class
 test/Discover.class
 test/Flight.class
 test/Chain.class
+test/BookingReaderWriter.class

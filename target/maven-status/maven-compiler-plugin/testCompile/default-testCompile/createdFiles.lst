@@ -1,1 +1,7 @@
+test/DiscoverTest.class
+test/VisaTest.class
+test/MasterCardTest.class
+test/AmexTest.class
+test/FlightTest.class
 test/AppTest.class
+test/FlightInventoryTest.class
